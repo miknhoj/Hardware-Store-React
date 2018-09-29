@@ -45,9 +45,9 @@ class HomePage extends Component {
         })
     }
 
-    toggleView = () => {
+    toggleAdminView = () => {
         this.setState({
-            view: !this.state.view,
+            showAdminView: !this.state.showAdminView,
 
         })
     }
@@ -58,6 +58,15 @@ class HomePage extends Component {
     }
 
     render() {
+        const adminView = <AdminView 
+        productList = {this.state.productList}
+        addNewProductToProductList={this.addNewProductToProductList}
+        deleteProductFromProductList={this.deleteProductFromProductList} />
+
+        const shopView = <ShopView 
+        productList = {this.state.productList}
+        />
+
         return (
             <div>
                 <h1>My Hardware Store</h1>
@@ -76,21 +85,16 @@ class HomePage extends Component {
                         null}
                  </div>
 
-                  <span>
-                    <button onClick={this.toggleView}>
-                        {this.state.view ? 'Admin View' : 'Shop View'}
+                 <span>
+                    <button onClick={this.toggleAdminView}>
+                        {this.state.showAdminView ? 'Show Shop View' : 'Show Admin View'}
                     </button>
                 </span>
-
-                 <AdminView 
-                    productList = {this.state.productList}
-                    addNewProductToProductList={this.addNewProductToProductList}
-                    deleteProductFromProductList={this.deleteProductFromProductList} />
-
-                <ShopView 
-                    productList = {this.state.productList}
-                    />
+        
+            <div id="view-container">
+                {this.state.showAdminView ? adminView : shopView}
             </div>
+        </div>
         )
     }
 }
