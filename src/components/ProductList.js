@@ -7,6 +7,7 @@ class ProductList extends Component {
         const productList = this.props.productList.map((product, i)=> {
             return (
                 <Product 
+                viewMode={this.props.viewMode}
                 key={i} 
                 product={product}
                 index={i}
