@@ -10,7 +10,9 @@ class ShopView extends Component {
                 <h2>Products</h2>
                 <ProductList 
                 productList = {this.props.productList}
-                deleteProductFromProductList={this.props.deleteProductFromProductList}/>
+                deleteProductFromProductList={this.props.deleteProductFromProductList}
+                viewMode={'SHOP'}
+                />
             </div>
 
         )

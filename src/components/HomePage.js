@@ -69,6 +69,7 @@ class HomePage extends Component {
 
         return (
             <div>
+                <div id="home-header">
                 <h1>My Hardware Store</h1>
                 <div>Currently on Sale: {this.state.itemCurrentlyOnSale}!</div>
                 <span>
@@ -84,16 +85,17 @@ class HomePage extends Component {
                             onChange = {this.handleItemCurrentlyOnSaleChange} /> : 
                         null}
                  </div>
-
                  <span>
                     <button onClick={this.toggleAdminView}>
                         {this.state.showAdminView ? 'Show Shop View' : 'Show Admin View'}
                     </button>
                 </span>
+                </div>
         
             <div id="view-container">
                 {this.state.showAdminView ? adminView : shopView}
             </div>
+        
         </div>
         )
     }

@@ -15,6 +15,10 @@ class Product extends Component{
             </div>
         )
 
+        // const showOptions = (
+            
+        // )
+
     switch (viewMode) {
         case 'ADMIN':
             return adminOptions
